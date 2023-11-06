@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog és könyvesbolt</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script src ="script.js"></script>
+</head>
+<body>
+    <header class="fejlec">
+        <h1>Blog és könyvesbolt</h1>
+        <nav class="panel">
+            <a href="weboldal.html">Főoldal</a>
+            <a href="konyvek.html">Könyvek</a>
+            <a href="#">Rendelés</a>
+            <a href="regisztracio.html">Regisztráció/Bejelentkezés</a>
+        </nav>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="title">
+           Bejelentkezés/Regisztráció
+        </div>
+        <form action="#" class="login-form">
+           <div class="field">
+              <input type="text" required>
+              <label>E-mail cím</label>
+           </div>
+           <div class="field">
+              <input type="password" required>
+              <label>Jelszó</label>
+           </div>
+           <div class="content">
+              <div class="checkbox">
+                 <input type="checkbox" id="remember-me">
+                 <label for="remember-me">Emlékezz rám</label>
+              </div>
+              <div class="pass-link">
+                 <a href="#" id="signup-link">Még nem regisztrált? Regisztálás</a>
+              </div>
+           </div>
+           <div class="field">
+              <input type="submit" value="Login">
+           </div>
+        </form>
+        <form action="#" class="signup-form">
+           <div class="field">
+              <input type="text" required>
+              <label>Felhasználónév</label>
+           </div>
+           <div class="field">
+              <input type="password" required>
+              <label>Jelszó</label>
+           </div>
+           <div class="field">
+              <input type="password" required>
+              <label>Jelszó megerősítése</label>
+           </div>
+           <div class="field">
+              <input type="text" required>
+              <label>E-mail cím</label>
+           </div>
+           <div class="field">
+              <input type="submit" value="Register">
+           </div>
+           <div class="content">
+              <div class="pass-link">
+                 <a href="#" id="login-link">Már van fiókja? Bejelentkezés</a>
+              </div>
+           </div>
+        </form>
+     </div>
+
+     <script>
+        const loginForm = document.querySelector('.login-form');
+        const signupForm = document.querySelector('.signup-form');
+        const loginLink = document.getElementById('login-link');
+        const signupLink = document.getElementById('signup-link');
+
+        loginLink.addEventListener('click', function(event) {
+           event.preventDefault();
+           loginForm.style.display = 'block';
+           signupForm.style.display = 'none';
+        });
+
+        signupLink.addEventListener('click', function(event) {
+           event.preventDefault();
+           loginForm.style.display = 'none';
+           signupForm.style.display = 'block';
+        });
+
+        // Kezdetben csak a bejelentkezési űrlap legyen látható
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+     </script>
+    </main>
+    <footer>
+        <p>&copy; 2023 Blog és könyvesbolt</p>
+    </footer>
+</body>
+</html>
